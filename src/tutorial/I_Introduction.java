@@ -2,7 +2,7 @@ package src.tutorial;
 
 import java.util.Scanner;
 
-public class Class1 {
+public class I_Introduction {
   // Declaración de una constante:
   // se hace fuera del main para que pueda ser utilizada
   // en otras partes del programa

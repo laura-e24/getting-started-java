@@ -2,7 +2,7 @@ package src.tutorial;
 
 import java.util.Scanner;
 
-public class Class2 {
+public class II_Conditionals {
   final static Scanner input = new Scanner(System.in);
   final static String REQUEST_MESSAGE = "Please, enter the number ";
   final static String RESPONSE_MESSAGE = "Highest number is... ";
