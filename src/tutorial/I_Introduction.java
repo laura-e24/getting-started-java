@@ -7,6 +7,11 @@ public class I_Introduction {
   // se hace fuera del main para que pueda ser utilizada
   // en otras partes del programa
   final static int CURRENT_YEAR = 2023;
+
+  // Declaración de variables tipo string:
+  // el tipo se escribe con mayúscula ya que
+  // String no es un tipo primitivo de dato (como sí lo es
+  // el tipo int) sino que es una clase/objeto
   final static String WELCOME_MESSAGE = "Hello f@%#ing world";
   final static String YEAR_MESSAGE = "Please, write your birth year:";
 

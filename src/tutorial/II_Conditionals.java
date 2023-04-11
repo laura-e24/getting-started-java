@@ -17,6 +17,8 @@ public class II_Conditionals {
     System.out.println(REQUEST_MESSAGE + "two:");
     num2 = input.nextInt();
 
+
+    // Uso de condicionales if/else anidados. Es igual que en JavaScript.
     if (num1 > num2) System.out.println(RESPONSE_MESSAGE + num1);
     else if (num2 > num1) System.out.println(RESPONSE_MESSAGE + num2);
     else System.out.println(RESPONSE_MESSAGE_EQUALS);
