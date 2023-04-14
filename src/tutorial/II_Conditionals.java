@@ -2,6 +2,10 @@ package src.tutorial;
 
 import java.util.Scanner;
 
+/*
+ * Ingresar dos números y al final mostrar cuál es mayor, o si son iguales.
+ */
+
 public class II_Conditionals {
   final static Scanner input = new Scanner(System.in);
   final static String REQUEST_MESSAGE = "Please, enter the number ";
