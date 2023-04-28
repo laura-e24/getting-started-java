@@ -1,4 +1,4 @@
-package src.tutorial;
+package src.tp1.demo;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package src.tutorial.loops;
+package src.tp1.demo.loops;
 
 import java.util.Scanner;
 
@@ -18,12 +18,14 @@ public class V_While_B {
     int passingCounter = 0;
     int failedCounter = 0;
     int studentsQuantity;
-    int passingGradesSum = 0;
+    double passingGradesSum = 0;
+    double failedPercentage;
+    double passingGradesAverage;
 
     System.out.println("Enter last name...");
     name = input.nextLine();
 
-    while (!name.equals(END_OF_DATA)) {
+    while (!name.equalsIgnoreCase(END_OF_DATA)) {
       System.out.println("Enter grade...");
       grade = input.nextDouble();
 
@@ -31,11 +33,28 @@ public class V_While_B {
       input.nextLine();
 
       if (grade >= 4) {
-        // TODO: PROCESO UN APROBADO
+        passingCounter++;
+        passingGradesSum+= grade;
+      } else {
+        failedCounter++;
       }
 
       System.out.println("Enter last name...");
       name = input.nextLine();
+    }
+
+    studentsQuantity = passingCounter + failedCounter;
+
+    if (studentsQuantity > 0) {
+      failedPercentage = (double) (failedCounter * 100) / studentsQuantity;
+      System.out.println("Failed students percentage is " + failedPercentage);
+
+      if (passingCounter > 0) {
+        passingGradesAverage = (double) passingGradesSum / studentsQuantity;
+        System.out.println("Average passing grades is " + passingGradesAverage);
+      } else System.out.println("No one passed");
+    } else {
+      System.out.println("No students were entered.");
     }
 
     input.close();
