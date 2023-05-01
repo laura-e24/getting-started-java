@@ -8,6 +8,12 @@ package src.tp1.ejercicios;
 
 public class Ej1 {
   public static void main(String[] args) {
-    
+    int num1 = 0;
+    num1 += 2;
+
+    double num2 = Math.pow(num1, 2);
+
+    System.out.println("Num1 + 2 = " + num1);
+    System.out.println("Num1 * Num1 = " + num2);
   }
 }

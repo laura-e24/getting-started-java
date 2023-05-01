@@ -7,6 +7,13 @@ package src.tp1.ejercicios;
 
 public class Ej2 {
   public static void main(String[] args) {
-    
+    int num1 = 4;
+    int num2 = 5;
+
+    int sum = num1 + num2;
+    int mult = num1 * num2;
+
+    System.out.println("Num1 + num2 = " + sum);
+    System.out.println("Num1 * num2 = " + mult);
   }
 }
