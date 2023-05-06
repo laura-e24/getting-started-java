@@ -1,5 +1,7 @@
 package src.tp1.ejercicios;
 
+import java.util.Scanner;
+
 /*
  * Realizá un programa que al ingresar por teclado tres números enteros 
  * num1, num2 y num3, muestre el valor del mayor de todos. 
@@ -12,7 +14,31 @@ package src.tp1.ejercicios;
  */
 
 public class Ej7 {
+  final static Scanner input = new Scanner(System.in);
+  final static String REQUEST_MESSAGE = "Ingrese un valor entero para ";
+  final static String RESPONSE_MESSAGE = "El valor más alto es ";
+  final static int NUM_QUANTITY = 3;
   public static void main(String[] args) {
-    
+    int num1;
+    int num2;
+    int num3;
+
+    System.out.println(REQUEST_MESSAGE + "num1: ");
+    num1 = input.nextInt();
+
+    System.out.println(REQUEST_MESSAGE + "num2: ");
+    num2 = input.nextInt();
+
+    System.out.println(REQUEST_MESSAGE + "num3: ");
+    num3 = input.nextInt();
+
+    if (num1 == num2 && num2 == num3) System.out.println("Los números son iguales.");
+    else {
+      if (num1 > num2 && num1 > num3) System.out.println(RESPONSE_MESSAGE + "num1 " + "(" + num1 + ")");
+      else if (num2 > num1 && num2 > num3) System.out.println(RESPONSE_MESSAGE + "num2 " + "(" + num2 + ")");
+      else if (num3 > num2 && num3 > num2) System.out.println(RESPONSE_MESSAGE + "num3 " + "(" + num3 + ")");
+    }
+
+    input.close();
   }
 }
