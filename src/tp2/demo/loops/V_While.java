@@ -1,4 +1,4 @@
-package src.tp1.demo.loops;
+package src.tp2.demo.loops;
 
 import java.util.Scanner;
 
