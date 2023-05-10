@@ -1,5 +1,7 @@
 package src.tp1.ejercicios;
 
+import java.util.Scanner;
+
 /*
  * En un casino de juegos se desea mostrar los mensajes respectivos por el puntaje obtenido 
  * en el lanzamiento de tres dados de un cliente, de acuerdo a los siguientes resultados: 
@@ -11,7 +13,27 @@ package src.tp1.ejercicios;
  */
 
 public class Ej12 {
+  final static String REQUEST_MESSAGE = "Por favor, ingrese el valor del dado ";
+  final static Scanner input = new Scanner(System.in);
   public static void main(String[] args) {
-    
+    int sixesDiceCounter = 0;
+    var responseMessage = "";
+    int diceNumber;
+
+    for (int i = 0; i < 3; i++) {
+      System.out.println(REQUEST_MESSAGE + "número " + (i + 1) + ": ");
+      diceNumber = input.nextInt();
+
+      if (diceNumber == 6) sixesDiceCounter++;
+    }
+
+    if (sixesDiceCounter == 3) responseMessage = "¡¡¡EXCELENTE!!!";
+    else if (sixesDiceCounter == 2) responseMessage = "¡Muy bien!";
+    else if (sixesDiceCounter == 1) responseMessage = "Mmm... regular.";
+    else responseMessage = "Insuficiente";
+
+    System.out.println(responseMessage);
+
+    input.close();
   }
 }
