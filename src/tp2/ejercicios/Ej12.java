@@ -17,51 +17,59 @@ public class Ej12 {
   final static String REQUEST_NUMBER = ">> Por favor ingrese un número para ";
   final static String REQUEST_OPERATION = ">> Por favor ingrese operación SUMA (+)  RESTA  (-)  MULTIPLICACIÓN  (*)  DIVISIÓN  (/) MÓDULO  (%)  o (f) para finalizar el programa: ";
   final static String RESPONSE_MESSAGE = ">> FIN <<";
+  final static String ERROR_MESSAGE = ">>> ERROR: No se puede dividir por 0, ¡¡se rompe la matrix!! <<<";
   final static Scanner input = new Scanner(System.in);
   public static void main(String[] args) {
     String operation;
     int n1;
     int n2;
-    double result; 
+    var result = 0; 
 
     System.out.println(REQUEST_OPERATION);
     operation = input.nextLine();
 
-    System.out.println(REQUEST_NUMBER + "n1: ");
-    n1 = input.nextInt();
+    if (operation.equals(END_OF_ENTRY)) System.out.println(RESPONSE_MESSAGE);
+    else {
+      System.out.println(REQUEST_NUMBER + "n1: ");
+      n1 = input.nextInt();
 
-    System.out.println(REQUEST_NUMBER + "n2: ");
-    n2 = input.nextInt();
+      System.out.println(REQUEST_NUMBER + "n2: ");
+      n2 = input.nextInt();
 
 
-    switch (operation) {
-      case "+":
-        result = add(n1, n2);
-        break;
+      switch (operation) {
+        case "+":
+          result = add(n1, n2);
+          break;
 
-      case "-":
-        result = substract(n1, n2);
-        break;
-    
+        case "-":
+          result = substract(n1, n2);
+          break;
+      
 
-      case "*":
-        result = multiply(n1, n2);
-        break;
+        case "*":
+          result = multiply(n1, n2);
+          break;
 
-      case "/":
-        result = division(n1, n2);
-        break;
+        case "/":
+          if (n2 == 0) {
+            System.out.println(ERROR_MESSAGE);
+          } else {
+            result = division(n1, n2);
+          }
+          break;
 
-      case "%":
-        result = module(n1, n2);
-        break;
+        case "%":
+          result = module(n1, n2);
+          break;
 
-      default: System.out.println(RESPONSE_MESSAGE);
-        break;
+        default: result = 0;
+          break;
+      }
+
+      if (n2 != 0)
+        System.out.println(n1 + " " + operation + " " + n2 + " = " + result);
     }
-
-    //TO FINISH
-    // System.out.println(n1 + " " + operation + " " + n2 + " = " + result);
 
     input.close();
   }
